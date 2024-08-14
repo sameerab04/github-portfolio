@@ -73,6 +73,23 @@
             font-size: 1em;
             color: #666;
         }
+        .section-toggle {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .section-toggle button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .section-toggle button:hover {
+            background-color: #45a049;
+        }
         footer {
             background-color: #333;
             color: white;
@@ -100,6 +117,8 @@
         <h1>Sameera Boppana's Portfolio</h1>
         <p>Data Scientist | Machine Learning Enthusiast</p>
     </header>
+    
+    <!-- About Me Section -->
     <section>
         <h2>About Me</h2>
         <p>
@@ -117,7 +136,7 @@
     </section>
     
     <!-- Northwestern University Section -->
-    <section>
+    <section id="northwestern-section">
         <h2>Northwestern University</h2>
         <div class="projects">
             <div class="project">
@@ -152,14 +171,16 @@
                 <h2><a href="https://github.com/sameerab04/Boston_Crime_EDA">Boston Crime EDA</a></h2>
                 <p><strong>Project Goal:</strong> Perform exploratory data analysis on Boston crime data to uncover patterns and insights.</p>
                 <p><strong>Tech Stack Used:</strong> Python, Pandas, Matplotlib, Seaborn.</p>
-                <p><strong>Methods Used:</strong> Data Cleaning, Data Visualization, Statistical Analysis.</p>
-                <p><strong>Results:</strong> Successfully identified crime hotspots and trends over time, providing valuable insights for law enforcement agencies.</p>
-            </div>
-        </div>
-    </section>
+                <p><strong>Methods Used:</strong> Data Cleaning,Below is the continuation and completion of your `index.html` file, including the toggle feature for switching between the "Northwestern University" and "University of Pittsburgh" sections:
 
-    <!-- University of Pittsburgh Section -->
-    <section>
+```html
+<!-- Arrow Button -->
+<div class="section-toggle">
+    <button onclick="toggleSection()">Go to University of Pittsburgh</button>
+</div>
+
+<!-- University of Pittsburgh Section -->
+<section id="pittsburgh-section" style="display: none;">
     <h2>University of Pittsburgh</h2>
     <div class="projects">
         <div class="project">
@@ -206,3 +227,32 @@
         </div>
     </div>
 </section>
+
+<script>
+    function toggleSection() {
+        const northwesternSection = document.getElementById('northwestern-section');
+        const pittsburghSection = document.getElementById('pittsburgh-section');
+        const toggleButton = document.querySelector('.section-toggle button');
+
+        if (northwesternSection.style.display === 'none') {
+            northwesternSection.style.display = 'block';
+            pittsburghSection.style.display = 'none';
+            toggleButton.textContent = 'Go to University of Pittsburgh';
+        } else {
+            northwesternSection.style.display = 'none';
+            pittsburghSection.style.display = 'block';
+            toggleButton.textContent = 'Go to Northwestern University';
+        }
+    }
+</script>
+
+<footer>
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/sameera-boppana/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/sameerab04"><i class="fab fa-github"></i></a>
+        <a href="https://www.mccormick.northwestern.edu/machine-learning-data-science/people/students/class-of-2024/boppana-sameera.html"><i class="fas fa-university"></i></a>
+    </div>
+    <p>&copy; 2024 Sameera Boppana. All rights reserved.</p>
+</footer>
+</body>
+</html>
