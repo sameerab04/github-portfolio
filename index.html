@@ -7,118 +7,137 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header {
-            background-color: #2C3E50; /* Navy Blue */
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            letter-spacing: 2px;
-        }
-        header p {
-            font-size: 1.5em;
-            margin-top: 10px;
-        }
-        nav {
-            background-color: #34495E; /* Darker Navy Blue */
-            padding: 15px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #2980B9; /* Lighter blue */
-        }
-        section {
-            padding: 30px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #2C3E50; /* Navy Blue */
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        h3 {
-            font-size: 1.75em;
-            color: #2C3E50; /* Navy Blue */
-            margin-top: 30px;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        .projects, .coursework {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 10px;
-        }
-        .project, .course {
-            background-color: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex: 1 1 calc(33.333% - 20px); /* Ensure exactly three columns */
-            max-width: calc(33.333% - 20px); /* Ensure exactly three columns */
-            text-align: left;
-            transition: transform 0.3s ease;
-        }
-        .project:hover, .course:hover {
-            transform: translateY(-10px);
-        }
-        footer {
-            background-color: #2C3E50; /* Navy Blue */
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-        }
-        footer .social-icons a {
-            color: white;
-            margin: 0 15px;
-            font-size: 1.5em;
-            text-decoration: none;
-        }
-        footer .social-icons a:hover {
-            color: #2980B9; /* Lighter blue for hover */
-        }
-        footer p {
-            margin: 10px 0 0 0;
-            font-size: 1em;
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
 
-        /* Media Queries for responsiveness */
-        @media (max-width: 1200px) {
-            .project, .course {
-                flex: 1 1 calc(50% - 20px); /* Two columns on medium screens */
-                max-width: calc(50% - 20px);
-            }
-        }
+header {
+    background-color: #2C3E50; /* Navy Blue */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
 
-        @media (max-width: 768px) {
-            .project, .course {
-                flex: 1 1 100%; /* Single column on small screens */
-                max-width: 100%;
-            }
-        }
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+nav {
+    background-color: #34495E; /* Darker Navy Blue */
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #2980B9; /* Lighter blue */
+}
+
+section {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2C3E50; /* Navy Blue */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.projects, .coursework {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Reduced gap between cards */
+}
+
+.project, .course {
+    background-color: white;
+    padding: 20px; /* Adjusted padding for better content spacing */
+    border-radius: 15px; /* Increased border radius for smoother edges */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for a softer look */
+    flex: 1 1 calc(31% - 20px); /* Adjusted width to make the cards wider */
+    max-width: calc(31% - 20px);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover, .course:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.project h2, .course h2 {
+    font-size: 1.4em;
+    margin-bottom: 12px; /* Increased space below the title */
+    color: #2C3E50; /* Navy Blue */
+}
+
+.project p, .course p {
+    font-size: 1em;
+    color: #666;
+}
+
+footer {
+    background-color: #2C3E50; /* Navy Blue */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 15px;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+footer .social-icons a:hover {
+    color: #2980B9; /* Lighter blue for hover */
+}
+
+footer p {
+    margin: 10px 0 0 0;
+    font-size: 1em;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+    .project, .course {
+        flex: 1 1 calc(48% - 20px); /* Two columns on medium screens */
+        max-width: calc(48% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .project, .course {
+        flex: 1 1 100%; /* Single column on small screens */
+        max-width: 100%;
+    }
+}
+
     </style>
 </head>
 <body>
