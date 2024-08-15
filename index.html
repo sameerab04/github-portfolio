@@ -76,22 +76,13 @@
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex: 1 1 calc(33% - 20px);
-            max-width: calc(33% - 20px);
+            flex: 1 1 calc(33.333% - 20px); /* Ensure exactly three columns */
+            max-width: calc(33.333% - 20px); /* Ensure exactly three columns */
             text-align: left;
             transition: transform 0.3s ease;
         }
         .project:hover, .course:hover {
             transform: translateY(-10px);
-        }
-        .project h2, .course h2 {
-            font-size: 1.3em;
-            margin-bottom: 8px;
-            color: #2C3E50; /* Navy Blue */
-        }
-        .project p, .course p {
-            font-size: 1em;
-            color: #666;
         }
         footer {
             background-color: #2C3E50; /* Navy Blue */
@@ -112,6 +103,21 @@
         footer p {
             margin: 10px 0 0 0;
             font-size: 1em;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 1200px) {
+            .project, .course {
+                flex: 1 1 calc(50% - 20px); /* Two columns on medium screens */
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project, .course {
+                flex: 1 1 100%; /* Single column on small screens */
+                max-width: 100%;
+            }
         }
     </style>
 </head>
